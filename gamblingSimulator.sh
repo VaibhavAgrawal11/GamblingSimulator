@@ -1,7 +1,7 @@
 #!/bin/bash -x
-printf "Gamble till 20 days\n"
+printf "Calculate daily won lose stake\n"
 #CONSTANT
-BET=10
+BET=1
 WIN=1
 LOSE=0
 #VARIABLES
@@ -11,6 +11,8 @@ days=20
 #GAMBLE
 while(( $days>0))
 do
+	tempWon=$won
+	tempLost=$lost
 	stake=100
 	stop=$((stake/2))
 	goal=$((stake+stop))
@@ -26,6 +28,10 @@ do
 			stake=$((stake-BET))
 		fi
 	done
+winsDayEnd=$((won-tempWon))
+printf "Today's winnig: $winsDayEnd\n"
+lostDayEnd=$((lost-tempLost))
+printf "Taday's lost: $lostDayEnd\n"
 days=$((days-1))
 done
 
