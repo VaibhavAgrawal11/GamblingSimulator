@@ -1,3 +1,7 @@
 #!/bin/bash -x
-printf "Welcome to gambling simulator!\n"
+printf "Start bet with stake 100 	\n"
+#CONSTANT
+BET=1
+#VARIABLES
+stake=100
 
